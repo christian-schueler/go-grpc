@@ -1,0 +1,4 @@
+protoc --proto_path=. \
+  --go_out=fm_data \
+	--go-grpc_out=fm_data \
+	fm_data.proto

@@ -1,0 +1,25 @@
+edition = "2024";
+syntax = "proto3";
+
+package fmdata;
+option go_package = "fmdata";
+
+message ItemType {
+    string id = 1;
+    string type = 2;
+    string nummer = 3;
+    string name = 4;
+    string description = 5;
+    string parent = 6;
+    string parent_type = 7;
+    int status = 8;
+}
+
+message Item {
+    ItemType item = 1;
+    repeated ItemType sub_items = 2;
+}
+
+message FMData {
+    repeated Item items = 2;
+}
