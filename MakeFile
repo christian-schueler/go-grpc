@@ -1,4 +1,6 @@
-protoc --proto_path=. \
-  --go_out=fm_data \
-	--go-grpc_out=fm_data \
-	fm_data.proto
+build_proto:
+  protoc --go_out=./fmdata_proto \
+				 --go_opt=paths=source_relative \
+				 --go-grpc_out=./fmdata_proto \
+				 --go-grpc_opt=paths=source_relative \
+				 fm_data.proto
